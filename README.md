@@ -22,11 +22,16 @@ docker-compose up --force-recreate --build -d
 ```
 DATABASE_URL="mysql://root:root@mysql:3306/main"
 ```
-6. Create database
+6. Go to the php-apache container
+```
+docker ps
+docker exec -it kit-starter-api-platform-symfony5-lamp-docker_php-apache_1 bash
+```
+7. Create database
 ```
 ./bin/console doctrine:database:create
 ```
-## Create API entity and make migration
+## Create API entity and make migration (from php-apache container see 6.)
 1. Make entity
 ```
 ./bin/console make:entity
