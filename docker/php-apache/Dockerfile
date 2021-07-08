@@ -8,15 +8,15 @@ RUN apt-get update \
 RUN docker-php-ext-install zip pdo pdo_mysql mysqli
 
  # install and configure xdebug
-RUN pecl install xdebug \
- && docker-php-ext-enable xdebug \
- && echo 'zend_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20180731/xdebug.so"' >> /usr/local/etc/php/conf.d/xdebug.ini \
- && echo 'xdebug.remote_enable=1' >> /usr/local/etc/php/conf.d/xdebug.ini \
- && echo 'xdebug.idekey=PHPSTORM' \
- # set autostart to 1, so API calls auto trigger debugger
- && echo 'xdebug.remote_autostart=0' >> /usr/local/etc/php/conf.d/xdebug.ini \
- && echo 'xdebug.remote_connect_back=1' >> /usr/local/etc/php/conf.d/xdebug.ini \
- && echo 'xdebug.remote_port=9000' >> /usr/local/etc/php/conf.d/xdebug.ini
+#RUN pecl install xdebug \
+# && docker-php-ext-enable xdebug \
+# && echo 'zend_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20180731/xdebug.so"' >> /usr/local/etc/php/conf.d/xdebug.ini \
+# && echo 'xdebug.remote_enable=1' >> /usr/local/etc/php/conf.d/xdebug.ini \
+# && echo 'xdebug.idekey=PHPSTORM' \
+# # set autostart to 1, so API calls auto trigger debugger
+# && echo 'xdebug.remote_autostart=0' >> /usr/local/etc/php/conf.d/xdebug.ini \
+# && echo 'xdebug.remote_connect_back=1' >> /usr/local/etc/php/conf.d/xdebug.ini \
+# && echo 'xdebug.remote_port=9000' >> /usr/local/etc/php/conf.d/xdebug.ini
 
  # enable required apache modules
 RUN a2enmod rewrite headers

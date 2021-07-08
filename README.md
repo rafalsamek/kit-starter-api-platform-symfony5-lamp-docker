@@ -20,7 +20,7 @@ docker-compose up --force-recreate --build -d
 ```
 5. Setup database in .env file
 ```
-DATABASE_URL="mysql://root:root@127.0.0.1:3306/cheese_whiz"
+DATABASE_URL="mysql://root:root@mysql:3306/cheese_whiz"
 ```
 6. Create database
 ```
