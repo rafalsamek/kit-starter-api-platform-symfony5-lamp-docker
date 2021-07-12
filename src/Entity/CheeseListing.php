@@ -99,13 +99,6 @@ class CheeseListing
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
     public function getIsPublished(): ?bool
     {
         return $this->isPublished;
