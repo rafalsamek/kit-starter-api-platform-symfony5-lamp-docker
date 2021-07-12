@@ -82,6 +82,13 @@ class CheeseListing
         return $this;
     }
 
+    public function setTextDescription(string $description): self
+    {
+        $this->description = nl2br($description);
+
+        return $this;
+    }
+
     public function getPrice(): ?int
     {
         return $this->price;
