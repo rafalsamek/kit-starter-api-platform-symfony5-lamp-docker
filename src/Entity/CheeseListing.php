@@ -111,6 +111,11 @@ class CheeseListing
         return $this->createdAt;
     }
 
+    /**
+     * How long ago in text that this cheese listing was added.
+     *
+     * @Groups({"cheese_listing:read"})
+     */
     public function getCreatedAtAgo(): string
     {
         return Carbon::instance($this->getCreatedAt())->diffForHumans();
