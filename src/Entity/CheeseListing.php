@@ -58,7 +58,7 @@ class CheeseListing
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isPublished;
+    private $isPublished = false;
 
     public function __construct()
     {
@@ -87,6 +87,11 @@ class CheeseListing
         return $this->description;
     }
 
+    /**
+     * The description of the cheese as raw text.
+     *
+     * @Groups({"cheese_listing:write"})
+     */
     public function setTextDescription(string $description): self
     {
         $this->description = nl2br($description);
